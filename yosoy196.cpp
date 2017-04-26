@@ -67,6 +67,7 @@ int main() {
     cout<<"¿Desea calcular otro rango?(S/N)"<<endl;
     cin>>op;
   }while(op=='s'||op=='S');
+  cout<<"Tenga un excelente día"<<endl;
   return 0;
 
 }
