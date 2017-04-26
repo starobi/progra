@@ -39,29 +39,34 @@ using namespace std;
  }
 
 int main() {
+  char op;
   string nummax, nummin,prueba;
   BigInteger min,max;
   int contpalin=0, nolychrel=0, lychrel=0;
-  cout<<"Escribe el valor mínimo"<<endl;
-  cin>> nummin;
-  cout<<"Escribe el valor máximo"<<endl;
-  cin>>nummax;
-  min=stringToBigInteger(nummin);
-  max=stringToBigInteger(nummax);
-  for (min; min<=max; min++) {
-    prueba=bigIntegerToString(min);
-    if(palindromo(prueba)){
-      contpalin++;
-    }else if(verpalindromo(prueba)){
-      nolychrel++;
-    }else{
-      lychrel++;
+  do{
+    cout<<"Escribe el valor mínimo"<<endl;
+    cin>> nummin;
+    cout<<"Escribe el valor máximo"<<endl;
+    cin>>nummax;
+    min=stringToBigInteger(nummin);
+    max=stringToBigInteger(nummax);
+    for (min; min<=max; min++) {
+      prueba=bigIntegerToString(min);
+      if(palindromo(prueba)){
+        contpalin++;
+      }else if(verpalindromo(prueba)){
+        nolychrel++;
+      }else{
+        lychrel++;
+      }
     }
-  }
-  cout<<"Valor mínimo: "<<nummin<<endl<<"Valor máximo: "<< nummax<<endl;
-  cout<<endl<<"Palindomos naturales: "<<contpalin<<endl;
-  cout<<"Números no Lychrel: "<<nolychrel<<endl;
-  cout<<"Números Lychrel: "<<lychrel<<endl;
+    cout<<"Valor mínimo: "<<nummin<<endl<<"Valor máximo: "<< nummax<<endl;
+    cout<<endl<<"Palindomos naturales: "<<contpalin<<endl;
+    cout<<"Números no Lychrel: "<<nolychrel<<endl;
+    cout<<"Números Lychrel: "<<lychrel<<endl<<endl;
+    cout<<"¿Desea calcular otro rango?(S/N)"<<endl;
+    cin>>op;
+  }while(op=='s'||op=='S');
   return 0;
 
 }
